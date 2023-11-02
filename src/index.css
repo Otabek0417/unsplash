@@ -1,0 +1,173 @@
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;800;900&display=swap);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+html {
+  height: 100%;
+}
+body {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: linear-gradient(0deg, #e8d25f 0%, #e8d25f 100%);
+}
+main {
+  flex-grow: 1;
+}
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.navbar__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__list .logo {
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.navbar__list a {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+.navbar__list a:hover {
+  text-decoration: underline;
+}
+.navbar__list .nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.error-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+form {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+form input {
+  width: 100%;
+  max-width: 717px;
+  padding: 10px 33px;
+  font-size: 18px;
+  font-family: inherit;
+  outline: none;
+  border-radius: 12px;
+  border: 2px dotted #fdfdfd;
+  background: #fdfdfd;
+  box-shadow: 0px 2px 20px 0px rgba(18, 27, 33, 0.1);
+}
+form input:focus {
+  border-color: blue;
+}
+
+form button {
+  padding: 10px 10px;
+  border: 0;
+  background-color: #333;
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+form img {
+  position: relative;
+  left: -48px;
+  top: 8px;
+  z-index: 1;
+}
+
+.gelerey img {
+  object-fit: cover;
+  width: 100%;
+  box-shadow: 0px 2px 20px 0px rgba(18, 27, 33, 0.1);
+  border-radius: 43px;
+  width: 300px;
+  height: 320px;
+}
+
+.gelerey ul {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.title {
+  margin-top: 60px;
+  text-align: center;
+}
+.gelerey li {
+  position: relative;
+}
+
+.hover {
+  position: absolute;
+  z-index: 1;
+  bottom: 4px;
+  width: 100%;
+  box-shadow: 0px 2px 20px 0px rgba(18, 27, 33, 0.1);
+  border-radius: 43px;
+  width: 300px;
+  height: 321px;
+  background: rgb(8 7 7 / 28%);
+  backdrop-filter: blur(2px);
+}
+.icons {
+  display: flex;
+  align-items: flex-end;
+  gap: 250px;
+  flex-direction: column;
+  padding-top: 5px;
+  padding-right: 20px;
+}
+
+.icon-like {
+  font-size: 25px;
+}
+.icon-load {
+  background-color: aliceblue;
+  padding: 5px;
+  font-size: 25px;
+  border-radius: 2px;
+}
+@media screen and (max-width: 970px) {
+  .gelerey img {
+    width: 100%;
+  }
+  .hover {
+    width: 100%;
+  }
+}
