@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BsDownload } from "react-icons/bs";
-import { FcLike } from "react-icons/Fc";
+import { FcLike } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { saveAs } from "file-saver";
 
