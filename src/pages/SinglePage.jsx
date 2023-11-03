@@ -7,7 +7,7 @@ function SinglePage() {
 
   return (
     <div>
-      <h1>hello</h1>
+      <h1>Otabek</h1>
     </div>
   );
 }
