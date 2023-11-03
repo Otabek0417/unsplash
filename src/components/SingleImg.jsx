@@ -6,7 +6,6 @@ import { saveAs } from "file-saver";
 
 function SingleImg({ result }) {
   const [displayed, setDisplayed] = useState(false);
-
   function downloadImage(link) {
     saveAs(link, "Image.png");
   }

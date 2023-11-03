@@ -4,8 +4,9 @@ import Gelerey from "../components/Gelerey";
 import { useState } from "react";
 
 function Home() {
-  const API =
-    "https://api.unsplash.com/search/photos?client_id=oV3MMVFWyUfmWvw4qv9b-scwi3PnQ5xScQLoB5bAsp8&page=1&per_page=18&query=";
+  const API = `https://api.unsplash.com/search/photos?client_id=${
+    import.meta.env.VITE_APP_ACCESS_KEY
+  }&page=1&per_page=18&query=`;
 
   const [url, setUrl] = useState(API + "features");
   const { data, isPending, error } = useFetch(url);
