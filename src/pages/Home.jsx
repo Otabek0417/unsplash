@@ -8,7 +8,7 @@ function Home() {
     import.meta.env.VITE_APP_ACCESS_KEY
   }&page=1&per_page=18&query=`;
 
-  const [url, setUrl] = useState(API + "features");
+  const [url, setUrl] = useState(API + "bmw");
   const { data, isPending, error } = useFetch(url);
 
   const newUrl = (value) => {

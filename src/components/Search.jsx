@@ -16,6 +16,7 @@ function Search({ newUrl }) {
           ref={inputVal}
           type="text"
           placeholder="write whatever you want"
+          autoComplete="off"
         />
         <img src="./ei_search.svg" alt="search" width={27} height={27} />
       </label>
