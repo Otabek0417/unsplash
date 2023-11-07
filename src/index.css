@@ -1,5 +1,16 @@
 @import url(https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;800;900&display=swap);
 
+:root {
+  --bg-color: linear-gradient(0deg, #e8d25f 0%, #e8d25f 100%);
+  --text-color: #000;
+  --link-colors: #333;
+}
+
+.dark-mode {
+  --bg-color: #000;
+  --text-color: #fff;
+  --link-colors: #fff;
+}
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +34,8 @@ body {
   flex-direction: column;
   height: 100%;
   /* background: linear-gradient(0deg, #e8d25f 0%, #e8d25f 100%); */
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 main {
   flex-grow: 1;
@@ -51,7 +64,7 @@ img {
 .navbar__list a {
   font-weight: bold;
   font-size: 18px;
-  color: #333;
+  color: var(--link-colors);
 }
 
 .navbar__list a:hover {
@@ -122,7 +135,6 @@ form button {
   position: relative;
 }
 .title {
-  margin-top: 60px;
   text-align: center;
 }
 
@@ -182,10 +194,10 @@ form button {
 }
 
 .list {
+  margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 12px;
 }
 
 .profil {
@@ -203,13 +215,48 @@ form button {
   height: 50px;
   border-radius: 50%;
 }
-
 .profil_wrapper p {
   font-size: 17px;
   color: #fff;
   font-weight: bold;
 }
 
+.bage {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rgb(216, 188, 72);
+}
+.login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.login button {
+  border-radius: 3px;
+}
+.buttonInner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 25px;
+  padding: 5px 10px;
+}
+.user_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.user_img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
 @media screen and (max-width: 970px) {
   .gelerey img {
     width: 100%;

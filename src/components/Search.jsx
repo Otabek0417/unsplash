@@ -18,7 +18,12 @@ function Search({ newUrl }) {
           placeholder="write whatever you want"
           autoComplete="off"
         />
-        <img src="./ei_search.svg" alt="search" width={27} height={27} />
+        <img
+          src="https://unsplash-site-copy.netlify.app/ei_search.svg"
+          alt="search"
+          width={27}
+          height={27}
+        />
       </label>
       <button>submit</button>
     </form>

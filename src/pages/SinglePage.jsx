@@ -6,7 +6,12 @@ function SinglePage() {
     import.meta.env.VITE_APP_ACCESS_KEY
   }`;
   const { data: image, isPending, error } = useFetch(url);
-  console.log(image && image);
+  if (isPending) {
+    return <h1>Loading...</h1>;
+  }
+  if (error) {
+    return <h1>{error}</h1>;
+  }
   return (
     <div className="singlePage">
       {image && (
@@ -28,7 +33,7 @@ function SinglePage() {
             </li>
             <li className="list__item">
               <h2>Likes</h2>
-              <p>{image.likes.toLocaleString("en-US")}</p>
+              <p>{image.likes && image.likes.toLocaleString("en-US")}</p>
             </li>
             {/* <li className="list__item">
               <h2>Description</h2>
@@ -41,9 +46,7 @@ function SinglePage() {
                 className="profil-img"
                 src={image.user.profile_image.large}
               />
-              <p>
-                {image.user.first_name} {image.user.last_name}
-              </p>
+              <p>{image.user.name}</p>
             </div>
           </div>
         </>

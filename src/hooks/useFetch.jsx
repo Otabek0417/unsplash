@@ -1,32 +1,43 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useEffect, useReducer } from "react";
+const changeState = (state, action) => {
+  switch (action.type) {
+    case "SET_DATA":
+      return { ...state, data: action.payload };
+    case "SET_ISPENDING":
+      return { ...state, isPending: action.payload };
+    case "SET_ERROR":
+      return { ...state, error: action.payload };
+    default:
+      return;
+      state;
+  }
+};
 function useFetch(url) {
-  const [data, setData] = useState(null);
-  const [isPending, setIspending] = useState(false);
-  const [error, setError] = useState(null);
-
+  const [state, dispatch] = useReducer(changeState, {
+    data: null,
+    isPending: false,
+    error: null,
+  });
   useEffect(() => {
-    console.log(data);
     const getData = async () => {
-      setIspending(true);
       try {
+        dispatch({ type: "SET_ISPENDING", payload: true });
         const request = await fetch(url);
         if (!request.ok) {
           throw new Error("Xatolik yuz berdi :(");
         }
         const data = await request.json();
-        setData(data);
-        setError(null);
-        setIspending(false);
+        dispatch({ type: "SET_DATA", payload: data });
+        dispatch({ type: "SET_ERROR", payload: null });
+        dispatch({ type: "SET_ISPENDING", payload: false });
       } catch (error) {
-        setIspending(false);
-        setError(error.message);
-        console.log(error.message);
+        dispatch({ type: "SET_ISPENDING", payload: false });
+        dispatch({ type: "SET_ERROR", payload: error.message });
       }
     };
     getData();
   }, [url]);
-  return { data, isPending, error };
+  return { ...state };
 }
 
 export default useFetch;
